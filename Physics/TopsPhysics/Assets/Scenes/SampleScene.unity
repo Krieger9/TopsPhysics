@@ -125,6 +125,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2025279793}
     m_Modifications:
+    - target: {fileID: 2300000, guid: b97bd424a0147a84d873ffe16ca30bcb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b97bd424a0147a84d873ffe16ca30bcb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -173,6 +177,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2ed4ee593cc0b6d48b648cc5eecdefad, type: 2}
+    - target: {fileID: 2300000, guid: b97bd424a0147a84d873ffe16ca30bcb, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ed64e14894161f944a97132624f3e470, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b97bd424a0147a84d873ffe16ca30bcb, type: 3}
   m_IsPrefabParent: 0
@@ -411,7 +419,7 @@ Prefab:
     - target: {fileID: 54499835999384438, guid: 89510edbb78e6ae4288515383c639fa5,
         type: 2}
       propertyPath: m_Mass
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 23136334182431420, guid: 89510edbb78e6ae4288515383c639fa5,
         type: 2}
@@ -510,7 +518,7 @@ GameObject:
   - component: {fileID: 734054122}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Cork
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -792,7 +800,7 @@ GameObject:
   - component: {fileID: 1337244335}
   m_Layer: 0
   m_Name: WallChunk
-  m_TagString: Untagged
+  m_TagString: ArenaWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,6 +7,9 @@ TagManager:
   - PlayerTop
   - Environment
   - BowlArena
+  - ArenaWall
+  - Bowl
+  - Cork
   layers:
   - Default
   - TransparentFX
