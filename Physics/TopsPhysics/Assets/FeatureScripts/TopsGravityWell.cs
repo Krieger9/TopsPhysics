@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityWell : MonoBehaviour {
+public class TopsGravityWell : MonoBehaviour {
     public float Gravity = 100;
     EnvironmentalCollections environmentCollections;   
 
@@ -13,6 +13,14 @@ public class GravityWell : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        foreach(GameObject top in environmentCollections.PlayerTops)
+        {
+            var rigidBody = top.GetComponent<Rigidbody>();
+            if (rigidBody != null)
+            {
+                var forceVector = this.transform.position - top.transform.position;
+                rigidBody.AddForce(forceVector.normalized * Gravity);
+            }
+        }
 	}
 }
