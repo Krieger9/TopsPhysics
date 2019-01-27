@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DuplicateAround : MonoBehaviour {
+    public string InstantiateTo;
     public float PieceCount;
     public GameObject PieceToRotate;
     public List<GameObject> createdObjects = new List<GameObject>();
@@ -22,7 +23,7 @@ public class DuplicateAround : MonoBehaviour {
         var rotationDegrees = 360f / PieceCount;
         var startLocation = PieceToRotate.transform.position;
         var startRotation = PieceToRotate.transform.rotation;
-        var WallCollidersParent = transform.Find("Bowl/WallColliders");
+        var WallCollidersParent = transform.Find(InstantiateTo);
 
         for(float counter = 0; counter < PieceCount; counter++)
         {
