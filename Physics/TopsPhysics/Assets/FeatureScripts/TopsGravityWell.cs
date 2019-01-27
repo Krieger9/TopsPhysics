@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityWell : MonoBehaviour {
+public class TopsGravityWell : MonoBehaviour {
     public float Gravity = 100;
     EnvironmentalCollections environmentCollections;   
 
