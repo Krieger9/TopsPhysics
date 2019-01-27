@@ -13,6 +13,14 @@ public class TopsGravityWell : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        foreach(GameObject top in environmentCollections.PlayerTops)
+        {
+            var rigidBody = top.GetComponent<Rigidbody>();
+            if (rigidBody != null)
+            {
+                var forceVector = this.transform.position - top.transform.position;
+                rigidBody.AddForce(forceVector.normalized * Gravity);
+            }
+        }
 	}
 }

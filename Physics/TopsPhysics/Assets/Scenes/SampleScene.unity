@@ -369,7 +369,7 @@ Prefab:
     - target: {fileID: 54499835999384438, guid: 89510edbb78e6ae4288515383c639fa5,
         type: 2}
       propertyPath: m_Mass
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23136334182431420, guid: 89510edbb78e6ae4288515383c639fa5,
         type: 2}
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 785563519}
   m_Layer: 0
   m_Name: Environment
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -597,6 +597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 820371726}
   - component: {fileID: 820371727}
+  - component: {fileID: 820371728}
   m_Layer: 0
   m_Name: Cork
   m_TagString: Untagged
@@ -632,6 +633,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &820371728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820371725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47283f764a18a7a4babfec0b6a186b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gravity: 0.15
 --- !u!1 &1023997507
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +739,11 @@ Prefab:
         type: 2}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114529913357680866, guid: 89510edbb78e6ae4288515383c639fa5,
+        type: 2}
+      propertyPath: EngineTorque
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89510edbb78e6ae4288515383c639fa5, type: 2}
