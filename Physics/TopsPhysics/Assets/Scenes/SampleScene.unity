@@ -544,8 +544,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 785563520}
-  - component: {fileID: 785563519}
   - component: {fileID: 785563521}
+  - component: {fileID: 785563519}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
