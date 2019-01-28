@@ -39,7 +39,7 @@ public class AttractToCork : MonoBehaviour {
 	    if(Activated && (!IsGrounded || !NotWhenGrounded))
         {
             var directionTo = TheCork.transform.position - this.transform.position;
-            TheRigidbody.AddForce(directionTo.normalized * (Force * Time.deltaTime));
+            TheRigidbody.AddForce(directionTo.normalized * (Force * Time.fixedDeltaTime));
         }
 	}
 }
