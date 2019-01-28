@@ -23,8 +23,9 @@ public class AerialReAlign : MonoBehaviour {
 	void FixedUpdate () {
         if(!IsGrounded)
         {
-            var rotationDirection = Quaternion.FromToRotation(this.transform.rotation.eulerAngles, StartRotation.eulerAngles);
-            transform.Rotate(rotationDirection.eulerAngles.normalized * (Force * Time.deltaTime));
+            transform.rotation = StartRotation;
+            //var rotationDirection = Quaternion.FromToRotation(this.transform.rotation.eulerAngles, StartRotation.eulerAngles);
+            //transform.Rotate(rotationDirection.eulerAngles.normalized * (Force * Time.fixedDeltaTime));
         }
 	}
 }

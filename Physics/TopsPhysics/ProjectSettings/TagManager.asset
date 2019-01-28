@@ -10,6 +10,7 @@ TagManager:
   - ArenaWall
   - Bowl
   - Cork
+  - BowlChunk
   layers:
   - Default
   - TransparentFX

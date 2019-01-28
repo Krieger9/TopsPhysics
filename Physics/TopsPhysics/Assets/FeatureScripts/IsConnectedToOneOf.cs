@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnowsIsGrounded : MonoBehaviour {
-    public bool IsGrounded{get; set;}
+public class IsConnectedToOneOf : MonoBehaviour {
+    public bool IsConnected{get; set;}
+    public string ItemTypeTagString;
 
     private GameObject groundedToObject;
 
@@ -19,28 +20,28 @@ public class KnowsIsGrounded : MonoBehaviour {
 
     public void OnCollisionExit(Collision collision)
     {
-        if(collision.gameObject.tag == Constants.BowlChunk && collision.gameObject == groundedToObject)
+        if(collision.gameObject.tag == ItemTypeTagString && collision.gameObject == groundedToObject)
         {
             groundedToObject = null;
-            IsGrounded = false;
+            IsConnected = false;
         }
     }
 
     public void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.tag == Constants.BowlChunk && collision.gameObject != groundedToObject)
+        if(collision.gameObject.tag == ItemTypeTagString && collision.gameObject != groundedToObject)
         {
             OnCollisionEnter(collision);
         }
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == Constants.BowlChunk)
+        if(collision.gameObject.tag == ItemTypeTagString)
         {
             if(groundedToObject != collision.gameObject)
             {
                 groundedToObject = collision.gameObject;
-                IsGrounded = true;
+                IsConnected = true;
             }
         }
     }
