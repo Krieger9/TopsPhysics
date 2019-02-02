@@ -7,6 +7,10 @@ TagManager:
   - PlayerTop
   - Environment
   - BowlArena
+  - ArenaWall
+  - Bowl
+  - Cork
+  - BowlChunk
   layers:
   - Default
   - TransparentFX

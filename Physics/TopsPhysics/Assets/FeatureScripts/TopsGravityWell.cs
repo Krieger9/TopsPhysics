@@ -12,7 +12,7 @@ public class TopsGravityWell : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         foreach(GameObject top in environmentCollections.PlayerTops)
         {
             var rigidBody = top.GetComponent<Rigidbody>();
