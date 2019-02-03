@@ -13,10 +13,16 @@ public class InfluencableRotation : MonoBehaviour, IInput2dDirection{
     {
         mainCamera = GameObject.FindGameObjectWithTag(Constants.MainCamera);
     }
+    
+    public void FixedUpdate()
+    {
+        this.transform.Rotate(influenceVector);
+    }
 
     public void AddInfluence(Constants.Direction2D input)
     {
         var inputInfluce = MakeVectorWithPower(input, powerPerInput);
+        influenceVector += inputInfluce;
     }
 
     private Vector3 MakeVectorWithPower(Constants.Direction2D input, float powerPerInput)
@@ -50,5 +56,4 @@ public class InfluencableRotation : MonoBehaviour, IInput2dDirection{
         }
     }
 
-    public void 
 }

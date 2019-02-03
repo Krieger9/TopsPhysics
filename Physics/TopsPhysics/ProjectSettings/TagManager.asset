@@ -11,6 +11,8 @@ TagManager:
   - Bowl
   - Cork
   - BowlChunk
+  - BowlGameUIController
+  - UIInputPanel
   layers:
   - Default
   - TransparentFX
