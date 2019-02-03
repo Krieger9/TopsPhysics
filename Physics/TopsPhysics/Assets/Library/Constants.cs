@@ -7,5 +7,8 @@ public static class Constants {
     public static readonly string BowlArena = "BowlArena";
     public static readonly string PlayerTop = "PlayerTop";
     public static readonly string Environment = "Environment";
+    public static readonly string MainCamera = "MainCamera";
     public static readonly string WallChunk = "WallChunk";
+
+    public enum Direction2D {NONE, LEFT, RIGHT, UP, DOWN }
 }

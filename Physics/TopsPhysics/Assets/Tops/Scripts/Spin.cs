@@ -12,11 +12,11 @@ public class Spin : MonoBehaviour {
 	void Start () {
         rigidBody = this.GetComponent<Rigidbody>();
         rigidBody.maxAngularVelocity = 200;
-        rigidBody.AddRelativeTorque(Vector3.forward * InitialTorque * (ReverseDirection ? 1 : -1));
+        rigidBody.AddRelativeTorque(Vector3.up * InitialTorque * (ReverseDirection ? 1 : -1));
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        rigidBody.AddRelativeTorque(Vector3.forward * EngineTorque * (ReverseDirection ? 1 : -1));
+        rigidBody.AddRelativeTorque(Vector3.up * EngineTorque * (ReverseDirection ? 1 : -1));
 	}
 }
