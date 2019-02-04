@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 54585323316629092}
   - component: {fileID: 114083368473455802}
   - component: {fileID: 114272669209518532}
+  - component: {fileID: 114435176810782676}
   m_Layer: 0
   m_Name: BallRunner
   m_TagString: Untagged
@@ -56,27 +57,27 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1327368511550610}
-  m_LocalRotation: {x: -0.0000001996496, y: 0.7107997, z: 0.7033946, w: -0.00000019756966}
-  m_LocalPosition: {x: -9.899853, y: -1.2111936, z: 0.2381916}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5000005, y: 0.50000036, z: 0.50000036}
   m_Children: []
   m_Father: {fileID: 4848648749184424}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -269.4, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4848648749184424
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115511007052650}
-  m_LocalRotation: {x: -0.13777265, y: -0.0127698975, z: 0.09140487, w: 0.98615456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.5854874, y: 0.24471855, z: -2.7291765}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4673224140977616}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -15.628001, y: -2.9980001, z: 11.003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23945564928494410
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -202,7 +203,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ca9d468c9c91c4a945ae8f3417907d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnglePowerFactor: 1
+  AnglePowerFactor: 0
+--- !u!114 &114435176810782676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115511007052650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2491010903139464db2cd10e397162fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerPerInput: 1
+  mainCamera: {fileID: 0}
 --- !u!136 &136058258536730052
 CapsuleCollider:
   m_ObjectHideFlags: 1

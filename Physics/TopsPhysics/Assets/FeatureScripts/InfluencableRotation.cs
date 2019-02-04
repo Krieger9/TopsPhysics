@@ -4,19 +4,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class InfluencableRotation : MonoBehaviour, IInput2dDirection{
-    Vector3 influenceVector = Vector3.zero;
+    private Vector3 influenceVector = Vector3.zero;
+    private Rigidbody rigidbody;
+    private Quaternion PointerStartingRotation { get; set; }
+
+    public GameObject InfluencePointer;
     public float powerPerInput;
     public GameObject mainCamera;
 
     public void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag(Constants.MainCamera);
+        rigidbody = GetComponent<Rigidbody>();
+        InfluencePointer = GameObject.FindGameObjectWithTag("InputPointer");
+        if(InfluencePointer != null)
+        {
+            PointerStartingRotation = InfluencePointer.transform.rotation;
+        }
     }
     
     public void FixedUpdate()
     {
-        this.transform.Rotate(influenceVector);
+        if (influenceVector != Vector3.zero && influenceVector.magnitude > .5)
+        {
+            rigidbody.AddTorque(-influenceVector * powerPerInput);
+            if (InfluencePointer)
+            {
+                InfluencePointer.SetActive(true);
+                InfluencePointer.transform.position = this.transform.position + (Vector3.up * 1);
+                InfluencePointer.transform.LookAt(this.transform.position + influenceVector);
+            }
+        }
+        else
+        {
+            InfluencePointer.SetActive(false);
+        }
+    }
+
+    public void NoInfluence()
+    {
+        influenceVector += (Vector3.zero - influenceVector).normalized * powerPerInput;
     }
 
     public void AddInfluence(Constants.Direction2D input)

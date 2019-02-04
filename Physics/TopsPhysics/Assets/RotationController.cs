@@ -9,6 +9,10 @@ public class RotationController : MonoBehaviour {
     private Constants.Direction2D lastMessageSent = Constants.Direction2D.NONE;
     private float timeLastMessageSent;
 
+    public void NoInputEntered()
+    {
+        influence.NoInfluence();
+    }
     public void UpEntered()
     {
         influence.AddInfluence(Constants.Direction2D.UP);
@@ -42,21 +46,25 @@ public class RotationController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if(Input.GetKeyDown(KeyCode.A))
+	    if(Input.GetKey(KeyCode.A))
         {
             LeftEntered();
         }
-        if(Input.GetKeyDown(KeyCode.S))
+        else if(Input.GetKey(KeyCode.S))
         {
             DownEntered();
         }
-        if(Input.GetKeyDown(KeyCode.D))
+        else if(Input.GetKey(KeyCode.D))
         {
             RightEntered();
         }
-        if(Input.GetKeyDown(KeyCode.W))
+        else if(Input.GetKey(KeyCode.W))
         {
             UpEntered();
+        }
+        else
+        {
+            NoInputEntered();
         }
 	}
 }
