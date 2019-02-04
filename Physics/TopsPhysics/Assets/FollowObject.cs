@@ -6,10 +6,11 @@ public class FollowObject : MonoBehaviour {
     public GameObject ObjectToFollow;
     public float maxDistance;
     public float minDistance;
+    private float heightPosition;
 
 	// Use this for initialization
 	void Start () {
-		
+        heightPosition = this.transform.position.y;
 	}
 	
 	// Update is called once per frame
@@ -24,6 +25,7 @@ public class FollowObject : MonoBehaviour {
         {
             this.transform.position = ObjectToFollow.transform.position - (differenceVector.normalized * minDistance);
         }
+        this.transform.position = new Vector3(this.transform.position.x, heightPosition, this.transform.position.z);
         this.transform.LookAt(ObjectToFollow.transform);
 	}
 }
