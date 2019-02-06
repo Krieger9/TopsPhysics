@@ -1,11 +1,10 @@
-﻿using Assets.Library;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class InfluencableRotation : MonoBehaviour, IInput2dDirection{
+public class InfluencableRotation : MonoBehaviour{
     private Vector3 influenceVector = Vector3.zero;
     private Rigidbody rigidbody;
     private Quaternion PointerStartingRotation { get; set; }
